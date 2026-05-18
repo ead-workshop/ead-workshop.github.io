@@ -934,26 +934,26 @@ a { text-decoration: none; color: inherit; }
 }
 
 @media (max-width: 1180px) {
-  .topbar {
+  /* .topbar {
     position: relative;
     background: #071025;
     height: auto;
     flex-wrap: wrap;
     padding: 24px;
-  }
+  } */
 
   .brand { width: auto; }
-
+/* 
   .nav {
     order: 3;
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 16px;
-  }
+  } */
 
   .hero-content {
-    padding-top: 90px;
+    padding-top: 200px;
   }
 
   .date-grid,
