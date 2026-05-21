@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EAD 2026 Sponsor Flyer</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+    :root {
+      --ink: #0f1733;
+      --muted: #5d688d;
+      --line: #dfe5f4;
+      --soft: #f5f8ff;
+      --soft-2: #eef3ff;
+      --accent: #5360d9;
+      --accent-2: #6f78e5;
+      --accent-3: #8a95f0;
+      --navy: #071025;
+      --shadow: 0 16px 40px rgba(7, 16, 37, 0.12);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #dfe5f4;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .flyer {
+      width: 210mm;
+      min-height: 297mm;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .topbar {
+      background: linear-gradient(135deg, #0b1a42 0%, #101f56 52%, #0b1a42 100%);
+      color: #fff;
+      padding: 18px 24px 14px;
+    }
+
+    .topbar-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 105px;
+      height: auto;
+      display: block;
+      flex: 0 0 auto;
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      color: #dbe2ff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      font-size: 12px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.88);
+      max-width: 560px;
+    }
+
+    .meta {
+      text-align: right;
+      min-width: 182px;
+      padding-top: 6px;
+      font-size: 11px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.92);
+    }
+
+    .meta strong {
+      display: block;
+      color: #fff;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 10px;
+      padding: 18px 24px 8px;
+      align-items: start;
+    }
+
+    .hero-image {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      width: 250px;
+      aspect-ratio: 1 / 1;
+      background: #071025;
+      box-shadow: var(--shadow);
+      align-self: start;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7,16,37,.18) 0%, rgba(7,16,37,.02) 30%, rgba(7,16,37,.02) 100%),
+        linear-gradient(180deg, rgba(7,16,37,.10) 0%, rgba(7,16,37,.05) 100%);
+      pointer-events: none;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 12px;
+      align-self: start;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 22px rgba(7, 16, 37, 0.06);
+      padding: 16px 16px 14px;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--soft-2);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .content {
+      padding: 6px 24px 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .section {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      padding: 16px 18px 14px;
+    }
+
+    .section h2 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      letter-spacing: -0.04em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2::before {
+      content: "";
+      width: 8px;
+      height: 18px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      flex: 0 0 auto;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.62;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 12px;
+    }
+
+    .bullets {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .bullet {
+      border-radius: 14px;
+      background: linear-gradient(180deg, #f7f9ff 0%, #eef3ff 100%);
+      padding: 10px 12px;
+      border: 1px solid #e0e6f7;
+      font-size: 11px;
+      font-weight: 700;
+      color: #33406b;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .program-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .highlight-card {
+      border-radius: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+      border: 1px solid var(--line);
+      padding: 12px 13px;
+    }
+
+    .program-card {
+      min-height: 108px;
+      padding: 14px 14px 12px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 18px rgba(7, 16, 37, 0.05);
+    }
+
+    .highlight-card h3 {
+      margin: 0 0 8px;
+      font-size: 12px;
+    }
+
+    .highlight-card ul {
+      margin: 0;
+      padding-left: 16px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .program-card h3 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: -0.03em;
+    }
+
+    .program-card p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .speaker {
+      text-align: center;
+      padding: 10px 8px 12px;
+      border-radius: 16px;
+      background: #f8faff;
+      border: 1px solid #e2e8f8;
+    }
+
+    .speaker-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #d9dce5;
+      margin: 0 auto 6px;
+    }
+
+    .speaker-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .speaker strong {
+      display: block;
+      font-size: 10.5px;
+      line-height: 1.35;
+    }
+
+    .speaker span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 9.5px;
+      line-height: 1.35;
+    }
+
+    .speaker-feature {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .speaker-feature .speaker {
+      padding: 10px 8px 10px;
+    }
+
+    .speaker-feature .speaker strong {
+      font-size: 11px;
+    }
+
+    .speaker-feature .speaker span {
+      font-size: 9px;
+    }
+
+    .program-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--soft-2);
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .logo-box {
+      min-height: 60px;
+      border-radius: 14px;
+      border: 1px dashed #cfd7ee;
+      background: linear-gradient(180deg, #ffffff 0%, #f6f8ff 100%);
+      display: grid;
+      place-items: center;
+      color: #63719a;
+      font-size: 10px;
+      font-weight: 800;
+      text-align: center;
+      padding: 8px;
+    }
+
+    .org-intro {
+      margin-top: 2px;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .org-line-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 16px;
+      margin-top: 10px;
+    }
+
+    .org-line {
+      font-size: 9px;
+      line-height: 1.45;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .org-photo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .org-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #f8faff;
+      border: 1px solid #e2e8f8;
+      padding: 0;
+      text-align: center;
+    }
+
+    .org-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .footer {
+      margin-top: 8px;
+      padding: 0 24px 22px;
+    }
+
+    .contact {
+      border-radius: 20px;
+      background: linear-gradient(135deg, #101f56, #5633d9);
+      color: #fff;
+      padding: 16px 18px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .contact p {
+      margin: 0;
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.84);
+    }
+
+    .contact-links {
+      font-size: 11.5px;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    .contact-links strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .note {
+      margin-top: 6px;
+      font-size: 10px;
+      color: rgba(255,255,255,.78);
+    }
+
+    .website {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media print {
+      @page {
+        size: 800px 1850px;
+        margin: 0;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      html, body {
+        background: #fff;
+      }
+
+      body {
+        display: block;
+        padding: 0;
+      }
+
+      .topbar,
+      .footer {
+        display: block !important;
+      }
+
+      .hero {
+        display: grid !important;
+      }
+
+      .flyer {
+        width: auto;
+        min-height: auto;
+        box-shadow: none;
+        background: #fff;
+        overflow: visible;
+        position: static;
+      }
+
+      .content {
+        padding: 4mm 0 0;
+      }
+
+      .hero {
+        grid-template-columns: 250px 1fr;
+        gap: 8px;
+      }
+
+      .flyer {
+        box-shadow: 0 8px 20px rgba(7, 16, 37, 0.06);
+      }
+
+      .card,
+      .section,
+      .speaker,
+      .org-photo,
+      .program-card,
+      .highlight-card,
+      .contact {
+        box-shadow: 0 4px 10px rgba(7, 16, 37, 0.03);
+      }
+
+      .hero-image {
+        width: 250px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+
+      .speaker-photo {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 6px;
+      }
+
+      .speaker {
+        padding: 8px 6px 10px;
+      }
+
+      .speaker-feature {
+        gap: 8px;
+      }
+
+      .section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="flyer">
+    <header class="topbar">
+      <div class="topbar-row">
+        <div class="brand">
+          <img src="assets/eccv2026_2.svg" alt="ECCV 2026" />
+          <div class="brand-copy">
+            <!-- <div class="eyebrow">ECCV 2026 Workshop</div> -->
+            <h1>Embodied Agents and Dialog</h1>
+            <p class="subtitle">Toward Safe, Interactive, and Collaborative Physical AI</p>
+          </div>
+        </div>
+        <div class="meta">
+          <strong>ECCV 2026• Malmö, Sweden</strong>
+          Workshop Website:<br />
+          <a class="website" href="https://ead-workshop.github.io/" target="_blank" rel="noopener noreferrer">https://ead-workshop.github.io/</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-image">
+        <img src="assets/hero-bg-square.png" alt="Embodied agent and dialog hero visual" />
+      </div>
+      <div class="hero-side">
+        <div class="card">
+          <h2>About the Workshop</h2>
+          <p>
+            As AI systems move beyond passive perception toward real-world interaction, embodied agents must not only perceive and act, but also communicate naturally with humans.
+          </p>
+          <p style="margin-top:8px;">
+            In physical environments, ambiguous or underspecified instructions can lead to inefficient or even unsafe behaviors. To bridge the gap between human intent and physical execution, proactive dialog becomes essential.
+          </p>
+          <p style="margin-top:8px;">
+            EAD focuses on embodied AI systems capable of reasoning, asking questions, resolving uncertainty, and collaborating safely through multi-turn interaction.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Embodied AI</span>
+            <span class="tag">Interactive AI</span>
+            <span class="tag">Multimodal Agents</span>
+            <span class="tag">Robotics</span>
+          </div>
+        </div>
+        <!-- <div class="card">
+          <h2>Why It Matters</h2>
+          <p>
+            Future AI systems will increasingly operate in homes, workplaces, and real-world environments where communication with humans is critical.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Physical AI</span>
+            <span class="tag">Human-Agent Interaction</span>
+            <span class="tag">Vision-and-Language Navigation</span>
+            <span class="tag">Safe Decision-Making</span>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <main class="content">
+    <section class="section">
+      <h2>Program Highlights</h2>
+      <p>
+        Hosted at ECCV 2026, Embodied Agents and Dialog workshop brings together researchers and industry practitioners working on embodied AI, multimodal agents, robotics, vision-language models, and interactive AI systems.
+      </p>
+      <div class="program-cards">
+        <div class="program-card">
+          <div class="program-badge">Invited Talk</div>
+          <!-- <h3>Invited Speakers</h3> -->
+          <p>Four invited talks from leading researchers in embodied AI, vision-language learning, and interactive robotics.</p>
+        </div>
+        <div class="program-card">
+          <div class="program-badge">Poster Session</div>
+          <!-- <h3>Research Exchange</h3> -->
+          <p>Poster presentations, research discussions, and networking opportunities for academia and industry participants.</p>
+        </div>
+        <div class="program-card">
+          <div class="program-badge">Challenge</div>
+          <!-- <h3>Featured Challenges</h3> -->
+          <p>The 1st DialNav Challenge and the 1st CoIN Challenge highlight benchmark-driven progress in interactive embodied agents.</p>
+        </div>
+      </div>
+      </section>
+
+      <section class="section">
+        <h2>Expected Audience</h2>
+        <p>
+          Researchers and practitioners from academia and industry working on robotics, multimodal AI, foundation models, vision-language agents, and human-robot interaction. Expected attendance: 50-100 participants.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Invited Speakers</h2>
+        <p>
+          The workshop features internationally recognized speakers across embodied AI, vision-language learning, and interactive robotics.
+        </p>
+        <div class="speaker-feature">
+          <div class="speaker">
+            <div class="speaker-photo"><img src="assets/speaker-1.jpeg" alt="Cordelia Schmid" /></div>
+            <strong>Cordelia Schmid</strong>
+            <span>Google / INRIA</span>
+          </div>
+          <div class="speaker">
+            <div class="speaker-photo"><img src="assets/speaker-2.png" alt="Ranjay Krishna" /></div>
+            <strong>Ranjay Krishna</strong>
+            <span>University of Washington / AI2</span>
+          </div>
+          <div class="speaker">
+            <div class="speaker-photo"><img src="assets/speaker-3.png" alt="Qi Wu" /></div>
+            <strong>Qi Wu</strong>
+            <span>The University of Adelaide</span>
+          </div>
+          <div class="speaker">
+            <div class="speaker-photo"><img src="assets/speaker-4.jpg" alt="Sungjoon Choi" /></div>
+            <strong>Sungjoon Choi</strong>
+            <span>Korea University</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Organizers</h2>
+        <p>
+          Experienced researchers and students from leading institutions are coming together as organizers for the workshop. The following are our organizers: Paul Hongsuck Seo (Korea University, Associate Professor), Yiming Wang (FBK, Senior Researcher), Jonghyun Choi (Seoul National University, Associate Professor), Aishwarya Agrawal (U. Montreal / Mila / Google DeepMind, Assistant Professor; CIFAR AI Chair), Shizhe Chen (INRIA Paris, Researcher), Sangwon Jung (Trillion Labs, Technical Staff), and student organizers Leekyeung Han, Edoardo Zorzi, Hyunji Min, Gengze Zhou, Jinseong Jeong, and Minyoung Kim.
+        </p>
+        <div class="org-photo-row">
+          <div class="org-photo"><img src="assets/organizer-paulhongsuckseo.jpg" alt="Paul Hongsuck Seo" /></div>
+          <div class="org-photo"><img src="assets/organizer-yimingwang.png" alt="Yiming Wang" /></div>
+          <div class="org-photo"><img src="assets/organizer-jonghyunchoi.png" alt="Jonghyun Choi" /></div>
+          <div class="org-photo"><img src="assets/organizer-aishwaryaagrawal.jpg" alt="Aishwarya Agrawal" /></div>
+          <div class="org-photo"><img src="assets/organizer-shizhechen.jpg" alt="Shizhe Chen" /></div>
+          <div class="org-photo"><img src="assets/organizer-sangwonjung.png" alt="Sangwon Jung" /></div>
+          <div class="org-photo"><img src="assets/organizer-leekyeunghan.png" alt="Leekyeung Han" /></div>
+          <div class="org-photo"><img src="assets/organizer-edoardozorzi.jpg" alt="Edoardo Zorzi" /></div>
+          <div class="org-photo"><img src="assets/organizer-hyunjimin.png" alt="Hyunji Min" /></div>
+          <div class="org-photo"><img src="assets/organizer-gengzezhou.jpg" alt="Gengze Zhou" /></div>
+          <div class="org-photo"><img src="assets/organizer-jinseongjeong.jpg" alt="Jinseong Jeong" /></div>
+          <div class="org-photo"><img src="assets/organizer-minyoungkim.jpeg" alt="Minyoung Kim" /></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <section class="section" style="margin: 0; padding: 16px 18px;">
+        <h2>Sponsorship &amp; Collaboration</h2>
+        <p>
+          We are currently seeking corporate sponsors and collaborators who are interested in supporting the future of embodied and interactive AI research.
+        </p>
+        <p style="margin-top:8px;">
+          Detailed sponsorship opportunities and collaboration plans can be discussed individually based on mutual interests and goals.
+        </p>
+        <!-- <div class="tag-list" style="margin-top:12px;">
+          <span class="tag">Robotics</span>
+          <span class="tag">AI Agents</span>
+          <span class="tag">Foundation Models</span>
+          <span class="tag">Autonomous Systems</span>
+          <span class="tag">Physical AI Platforms</span>
+        </div> -->
+      </section>
+
+      <section class="contact">
+        <div>
+          <h2>Contact</h2>
+          <p>
+            Workshop Website:
+            <a class="website" href="https://ead-workshop.github.io/" target="_blank" rel="noopener noreferrer">https://ead-workshop.github.io/</a>
+          </p>
+          <p class="note">We welcome sponsorship inquiries and collaboration opportunities.</p>
+        </div>
+        <div class="contact-links">
+          <strong>happilee12@korea.ac.kr</strong>
+          <strong>phseo@korea.ac.kr</strong>
+        </div>
+      </section>
+    </footer>
+  </article>
+</body>
+</html>
