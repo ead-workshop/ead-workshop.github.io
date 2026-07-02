@@ -840,13 +840,15 @@ img {
 }
 
 .organizer-row {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
   padding: 0 12px;
 }
 
 .mini-person {
+  flex: 0 0 calc((100% - 5 * 14px) / 6);
   min-height: 220px;
   padding: 24px 14px 18px;
   text-align: center;
@@ -1063,6 +1065,10 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .organizer-row .mini-person {
+    flex-basis: calc((100% - 14px) / 2);
+  }
+
   .bottom-panels,
   .footer {
     grid-template-columns: 1fr;
@@ -1216,6 +1222,10 @@ img {
     grid-template-columns: 1fr;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .organizer-row .mini-person {
+    flex-basis: 100%;
   }
 
   .news-card {
